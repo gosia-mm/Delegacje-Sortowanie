@@ -44,6 +44,19 @@ namespace Zadanie_1
 
         static void Main(string[] args)
         {
+            Kontener k = new Kontener();
+            DelegateWyswietl del1 = WyswietlW1;
+            DelegateWyswietl del2 = WyswietlW2;
+            DelegateWyswietl del3 = del1 + del2;
+
+            k.WyswietlCallBack(del3);
+            Console.WriteLine("--");
+            del3 -= del2;
+            k.WyswietlCallBack(del3);
+            Console.WriteLine("--");
+            del3 += del2;
+            k.WyswietlCallBack(del3);
+            Console.ReadKey();
 
         }
     }
