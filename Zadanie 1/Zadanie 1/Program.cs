@@ -30,6 +30,7 @@ namespace Zadanie_1
             del(this);
         }
     }
+
     class Program
     {
         public static void WyswietlW1(Kontener obj)
@@ -49,15 +50,51 @@ namespace Zadanie_1
             DelegateWyswietl del2 = WyswietlW2;
             DelegateWyswietl del3 = del1 + del2;
 
-            k.WyswietlCallBack(del3);
+            /*k.WyswietlCallBack(del3);
             Console.WriteLine("--");
             del3 -= del2;
             k.WyswietlCallBack(del3);
             Console.WriteLine("--");
             del3 += del2;
-            k.WyswietlCallBack(del3);
-            Console.ReadKey();
+            k.WyswietlCallBack(del3);*/
+            
 
+            int [] tablica = { 6, 3, 6, 1, 4, 9, 0, 1, 8, 2, 6, 4, 9, 3, 7, 5, 9, 2, 7, 3, 2, 4, 1, 8, 7, 0, 8, 5, 8, 3, 6, 2, 5, 3 };
+            int[] liczniki = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 }; // odpowiada po kolei liczbie wystąpień 0, 1, 2, 3, 4 itd.
+            
+            for(int j=0; j<liczniki.Length; j++)
+            {
+                for (int i=0; i<tablica.Length; i++)
+                {
+                    if(tablica[i] == j)
+                    liczniki[j]++;
+                } 
+            }
+
+            for (int i = 0; i < liczniki.Length; i++)
+                Console.WriteLine(liczniki[i]);
+            Console.WriteLine("----------------------------------------------------");
+
+
+
+            for (int m = 0; m < tablica.Length; m++)
+            {
+                for (int s = 0; s < liczniki.Length; s++)
+                { 
+                    for (int n = 0; n < liczniki[s]; n++)
+                        tablica[n] = 0;
+                }
+
+            }
+
+
+
+            for (int m = 0; m < tablica.Length; m++)
+            {
+                Console.Write(tablica[1] + " ");
+           }
+
+            Console.ReadKey();
         }
     }
 }
